@@ -14,15 +14,14 @@ class Main {
         double altura = scanner.nextDouble();
         System.out.printf("Qual seu peso?");
         double peso = scanner.nextDouble();
-        System.out.printf("Qual a sua idade?");
-        int idade = scanner.nextInt();
+
 
 ClassificacaoIMC calculos = new ClassificacaoIMC();
 
 calculos.setNome(nome);
 calculos.setAltura(altura);
 calculos.setPeso(peso);
-calculos.setIdade(idade);
+
 
 calculos.calcular();
 calculos.comparacao();

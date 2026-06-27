@@ -9,26 +9,26 @@ public class ClassificacaoIMC extends Calculadora {
 
 
     public void comparacao() {
-        if (resultado < =0.0) {
+        if (getResultado() <= 0.0) {
             System.out.printf("Numero invalido");
-        } else if (resultado < magreza) {
+        } else if (getResultado() < magreza) {
             System.out.println(" Magreza ");
-        } else if (resultado > magreza && resultado < pesoNormal) {
+        } else if (getResultado() > magreza && getResultado() < pesoNormal) {
             System.out.printf(" Peso ideal ");
 
-        } else if (resultado > pesoNormal && resultado < sobrePeso) {
+        } else if (getResultado() > pesoNormal && getResultado() < sobrePeso) {
             System.out.printf(" sobre peso");
 
-        } else if (resultado > sobrePeso && resultado < obesidade) {
+        } else if (getResultado() > sobrePeso && getResultado() < obesidade) {
             System.out.printf(" obesidade");
 
-        } else if (resultado >= obesidadeGrave) {
+        } else if (getResultado() >= obesidadeGrave) {
             System.out.printf("obesidade grave!");
         }
     }
 public void informaçoes(){
 
-    System.out.printf("Olá "+getNome()+" o resultado do seu IMC é de: "+resultado);
+    System.out.printf("Olá "+getNome()+" o resultado do seu IMC é de: "+getResultado());
 }
 
 

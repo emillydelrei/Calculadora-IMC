@@ -1,9 +1,15 @@
 public class Calculadora extends Pessoa {
 
-    double resultado ;
+    private double resultado ;
+
+    public void setResultado(double resultado) {
+        this.resultado = resultado;
+    }
 
     public    void calcular() {
-        double resultados = getPeso() / (getAltura() * 2);
+        double a = getAltura()*2;
+        double resultado= getPeso() / a;
+        setResultado(resultado);
     }
 
 
