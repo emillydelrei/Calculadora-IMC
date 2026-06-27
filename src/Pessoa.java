@@ -1,10 +1,13 @@
 public class Pessoa {
 
- private String nome;
- private int idade;
- private String genero;
- private double altura;
- private double peso;
+    private String nome;
+    private int idade;
+    private String genero;
+    private double altura;
+    private double peso;
+
+    public Pessoa() {
+    }
 
     public String getNome() {
         return nome;
