@@ -2,7 +2,7 @@ public class Calculadora extends Pessoa {
 
     private double resultado ;
 
-    public Calculadora(String nome, double altura, double peso) {
+    public Calculadora (String nome, double altura, double peso) {
         super(nome, altura, peso);
     }
 

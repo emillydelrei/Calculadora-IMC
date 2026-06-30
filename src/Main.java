@@ -16,16 +16,12 @@ class Main {
         double peso = scanner.nextDouble();
 
 
-ClassificacaoIMC calculos = new ClassificacaoIMC();
+        ClassificacaoIMC calculos = new ClassificacaoIMC(nome, altura, peso);
 
-calculos.setNome(nome);
-calculos.setAltura(altura);
-calculos.setPeso(peso);
+        calculos.calcular();
+        calculos.comparacao();
+        calculos.informacoes();
 
-
-calculos.calcular();
-calculos.comparacao();
-calculos.informaçoes();
 
 
 

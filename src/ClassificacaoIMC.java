@@ -7,6 +7,10 @@ public class ClassificacaoIMC extends Calculadora {
     protected double obesidade = 39.9;
     protected double obesidadeGrave = 40.0;
 
+    public ClassificacaoIMC(String nome, double altura, double peso) {
+        super(nome, altura, peso);
+    }
+
 
     public void comparacao() {
         if (getResultado() <= 0.0) {
@@ -26,9 +30,9 @@ public class ClassificacaoIMC extends Calculadora {
             System.out.printf("obesidade grave!");
         }
     }
-public void informaçoes(){
+public void informacoes(){
 
-    System.out.printf("Olá "+getNome()+" o resultado do seu IMC é de: "+getResultado());
+    System.out.printf("O seu IMC é de "+getResultado());
 }
 
 
