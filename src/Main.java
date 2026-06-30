@@ -7,12 +7,12 @@ class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.printf("Olá, para fazermos o calculo do seu IMC precisaremos de algumas informações: ");
-        System.out.printf("Qual seu nome?");
+        System.out.println("Olá, para fazermos o calculo do seu IMC precisaremos de algumas informações: ");
+        System.out.println("Qual seu nome?");
         String nome = scanner.nextLine();
-        System.out.printf("Qual é a sua altura(em centimetros)?");
+        System.out.println("Qual é a sua altura(0,00)?");
         double altura = scanner.nextDouble();
-        System.out.printf("Qual seu peso?");
+        System.out.println("Qual seu peso?");
         double peso = scanner.nextDouble();
 
 
