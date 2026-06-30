@@ -1,39 +1,43 @@
-public class ClassificacaoIMC extends Calculadora {
+public class ClassificacaoIMC {
 
-    // indices
-    protected double magreza = 18.5;
-    protected double pesoNormal = 24.9;
-    protected double sobrePeso = 29.9;
-    protected double obesidade = 39.9;
-    protected double obesidadeGrave = 40.0;
+    private static final double magreza = 18.5;
+    private static final double pesoNormal = 24.9;
+    private static final double sobrePeso = 29.9;
+    private static final double obesidade = 39.9;
+
+    private final Pessoa pessoa;
+    private final Calculadora calculadora;
 
     public ClassificacaoIMC(String nome, double altura, double peso) {
-        super(nome, altura, peso);
+
+        this.pessoa = new Pessoa(nome, altura, peso);
+        this.calculadora = new Calculadora();
     }
 
+    public void calcular() {
+
+        calculadora.calcularIMC(pessoa.getAltura(), pessoa.getPeso());
+    }
 
     public void comparacao() {
-        if (getResultado() <= 0.0) {
-            System.out.printf("Numero invalido");
-        } else if (getResultado() < magreza) {
-            System.out.println(" Magreza ");
-        } else if (getResultado() > magreza && getResultado() < pesoNormal) {
-            System.out.printf(" Peso ideal ");
+        double imc = calculadora.getResultado();
 
-        } else if (getResultado() > pesoNormal && getResultado() < sobrePeso) {
-            System.out.printf(" sobre peso");
-
-        } else if (getResultado() > sobrePeso && getResultado() < obesidade) {
-            System.out.printf(" obesidade");
-
-        } else if (getResultado() >= obesidadeGrave) {
-            System.out.printf("obesidade grave!");
+        if (imc <= 0.0) {
+            System.out.printf("Numero invalido%n");
+        } else if (imc < magreza) {
+            System.out.printf("Magreza%n");
+        } else if (imc < pesoNormal) {
+            System.out.printf("Peso ideal%n");
+        } else if (imc < sobrePeso) {
+            System.out.printf("Sobre peso%n");
+        } else if (imc < obesidade) {
+            System.out.printf("Obesidade%n");
+        } else {
+            System.out.printf("Obesidade grave!%n");
         }
     }
-public void informacoes(){
 
-    System.out.printf("O seu IMC é de "+getResultado());
-}
-
-
+    public void informacoes() {
+        System.out.printf(" %s, o seu IMC é de %.2f%n", pessoa.getNome(), calculadora.getResultado());
+    }
 }

@@ -1,21 +1,14 @@
-public class Calculadora extends Pessoa {
+public class Calculadora {
 
-    private double resultado ;
+    private double resultado;
 
-    public Calculadora (String nome, double altura, double peso) {
-        super(nome, altura, peso);
+    public double calcularIMC(double altura, double peso) {
+        if (altura <= 0) {
+            throw new IllegalArgumentException("Altura deve ser maior que zero");
+        }
+        this.resultado = peso / (altura * altura);
+        return this.resultado;
     }
-
-    public void setResultado(double resultado) {
-        this.resultado = resultado;
-    }
-
-    public    void calcular() {
-        double a = getAltura()*getAltura();
-        double resultado= getPeso() / a;
-        setResultado(resultado);
-    }
-
 
     public double getResultado() {
         return resultado;
