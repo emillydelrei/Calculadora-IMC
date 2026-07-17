@@ -6,13 +6,33 @@ public class Main {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Olá, para fazermos o calculo do seu IMC precisaremos de algumas informações: ");
 
-            System.out.println("Qual seu nome?");
-            String nome = scanner.nextLine().trim();
+            Pessoa pessoa = null;
 
-            double altura = lerDoublePositivo(scanner, "Qual é a sua altura, em metros? (ex: 1.75)");
-            double peso = lerDoublePositivo(scanner, "Qual seu peso, em kg? (ex: 70.5)");
 
-            ClassificacaoIMC calculos = new ClassificacaoIMC(nome, altura, peso);
+            while (pessoa == null) {
+                try {
+                    System.out.println("Qual seu nome?");
+                    String nome = scanner.nextLine().trim();
+
+                    if (nome.isEmpty()) {
+
+                        throw new IllegalArgumentException("Nome não pode ser vazio");
+                    }
+
+                    double altura = lerDoublePositivo(scanner, "Qual é a sua altura, em metros? (ex: 1.75)");
+                    double peso = lerDoublePositivo(scanner, "Qual seu peso, em kg? (ex: 70.5)");
+
+
+                    pessoa = new Pessoa(nome, altura, peso);
+
+                } catch (IllegalArgumentException e) {
+
+                    System.out.println("Erro: " + e.getMessage() + ". Vamos tentar novamente do início.\n");
+                }
+            }
+
+
+            ClassificacaoIMC calculos = new ClassificacaoIMC(pessoa.getNome(), pessoa.getAltura(), pessoa.getPeso());
 
             calculos.calcular();
             calculos.comparacao();
